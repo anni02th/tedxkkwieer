@@ -1,0 +1,11 @@
+/* Tailwind CSS imports (or your own CSS) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional custom styles if needed */
+body {
+  font-family: 'Roboto', sans-serif; /* Or your preferred font */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

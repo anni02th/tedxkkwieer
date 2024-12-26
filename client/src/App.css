@@ -1,0 +1,122 @@
+/* Main Timeline Container */
+.timeline-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header */
+  .timeline-header {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 50px;
+  }
+  
+  /* Timeline Wrapper */
+  .timeline {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+  }
+  
+  /* Vertical Timeline Line */
+  .timeline-line {
+    position: relative;
+    width: 4px;
+    background-color: rgb(200, 200, 200);
+    height: 100%;
+    margin-right: 40px;
+    border-radius: 2px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: background-color 0.3s ease; /* Transition for color change */
+  }
+  
+  /* Timeline Line Red Color when scrolled */
+  .timeline-line.red {
+    background-color: red;
+  }
+  
+  /* Highlight Circle that follows the mouse */
+  .timeline-highlight {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
+    transform: translateX(-50%);
+    pointer-events: none;
+    transition: top 0.05s ease-in-out; /* Smooth follow effect */
+  }
+  
+  /* Timeline Elements */
+  .timeline-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 60%;
+    margin-left: auto;
+  }
+  
+  /* Individual Timeline Element */
+  .timeline-element {
+    position: relative;
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  /* Make element visible when scrolled into view */
+  .timeline-element.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Alternate Left and Right */
+  .timeline-element-content {
+    background-color: rgb(220 38 38 / var(--tw-bg-opacity, 1));
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  /* Left Element comes from the left */
+  .timeline-element-content.left {
+    transform: translateX(-100%);
+  }
+  
+  /* Right Element comes from the right */
+  .timeline-element-content.right {
+    transform: translateX(100%);
+  }
+  
+  /* Element becomes visible after scroll */
+  .timeline-element-content.visible {
+    transform: translateX(0);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .timeline-container {
+      padding: 10px;
+    }
+  
+    .timeline-line {
+      left: 20%;
+    }
+  
+    .timeline-elements {
+      margin-left: 60px;
+      width: 80%;
+    }
+  }
+  

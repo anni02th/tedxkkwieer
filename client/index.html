@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/top logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/index.css" />
+    <title>TEDxKKWIEER | Aniket More</title>
+    <!-- Meta tags for social media platforms -->
+    <meta property="og:title" content="TEDxKKWIEER | Aniket More" />
+    <meta property="og:description" content="TEDxKKWIEER is an independently organized TED event at the K. K. Wagh Institude of Engineering Education and Research Nashik." />
+    <meta property="og:image" content="/social-media-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="TEDxKKWIEER | Aniket More" />
+    <meta name="twitter:description" content="TEDxKKWIEER is an independently organized TED event at the K. K. Wagh Institude of Engineering Education and Research Nashik." />
+    <meta name="twitter:image" content="/social-media-image.png" />
+  </head>
+  <body class="overflow-hidden">
+    <div id="root" class="hidden"></div>
+    <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-black">
+      <video src="/ted.mp4" autoplay loop muted class="object-cover w-full h-full"></video>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+          document.addEventListener('DOMContentLoaded', () => {
+        const rootElement = document.getElementById('root');
+        const loaderElement = document.getElementById('loader');
+
+        // Simulate loading time or wait for your app to be fully loaded
+        const checkAppLoaded = setInterval(() => {
+             // add a check for if all the fetches are successfull.
+          if (rootElement.innerHTML.trim() !== '') {
+            clearInterval(checkAppLoaded);
+            setTimeout(() => {
+                rootElement.classList.remove('hidden');
+                document.body.classList.remove('overflow-hidden')
+                loaderElement.classList.add('hidden'); // Hide the loader
+              }, 4000);
+          }
+        }, 500); // Check every 500ms
+      });
+    </script>
+  </body>
+</html>
